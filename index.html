@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kaluach — Jewish Calendar Tools</title>
+    <meta name="description" content="Kaluach calendar tools, calculators, downloads, and help — כל הכלים של קלוח במקום אחד." />
+    <meta property="og:title" content="Welcome to Kaluach" />
+    <meta property="og:description" content="Jewish calendar tools, calculators, downloads, and help." />
+    <meta property="og:image" content="og.png" />
+    <link rel="icon" href="favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Kaluach home">
+        <span class="brand-mark" aria-hidden="true">ק</span>
+        <span>Kaluach</span>
+      </a>
+      <div class="header-note">
+        <span>Jewish calendar tools</span>
+        <span class="divider" aria-hidden="true"></span>
+        <span dir="rtl" lang="he">כלים ללוח העברי</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="top">
+        <div class="hero-copy">
+          <p class="eyebrow">▦ &nbsp; Calendar · Times · Tradition</p>
+          <h1>Everything Kaluach,<br /><em>all in one place.</em></h1>
+          <div class="hebrew-intro" dir="rtl" lang="he">
+            <p class="hebrew-title">ברוכים הבאים לקלוח</p>
+            <p>כל הכלים, המידע והיישומים של קלוח — במקום אחד.</p>
+          </div>
+          <a class="primary-cta" href="https://online.kaluach.com">
+            <span>Open Kaluach Online <small dir="rtl" lang="he">פתיחת קלוח אונליין</small></span>
+            <b aria-hidden="true">→</b>
+          </a>
+        </div>
+
+        <div class="calendar-art">
+          <div class="orbit orbit-one" aria-hidden="true"></div>
+          <div class="orbit orbit-two" aria-hidden="true"></div>
+          <div class="sun-disc" dir="rtl" lang="he" aria-live="polite">
+            <span class="sun-small" id="hebrew-month">היום</span>
+            <span class="sun-number" id="hebrew-day">—</span>
+            <span class="sun-small" id="hebrew-weekday">התאריך העברי</span>
+          </div>
+          <div class="date-card date-one" dir="rtl" lang="he">
+            <span>השנה העברית · Hebrew year</span>
+            <strong id="hebrew-year">—</strong>
+          </div>
+          <div class="date-card date-two" lang="en">
+            <span>Hebrew date</span>
+            <strong id="english-hebrew-date">Today’s Hebrew date</strong>
+          </div>
+          <span class="star star-one" aria-hidden="true">✦</span>
+          <span class="star star-two" aria-hidden="true">✦</span>
+        </div>
+      </section>
+
+      <section class="resources" aria-labelledby="resources-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Explore the Kaluach family</p>
+            <h2 id="resources-title">Tools &amp; resources</h2>
+          </div>
+          <div class="section-hebrew" dir="rtl" lang="he">
+            <strong>כלים ומשאבים</strong>
+            <span>בחרו את השירות המתאים לכם</span>
+          </div>
+        </div>
+
+        <div class="resource-grid">
+          <a class="resource-card featured" data-tone="blue" href="https://online.kaluach.com">
+            <div class="card-topline"><span class="icon-wrap">◎</span><span class="external-icon">↗</span></div>
+            <div class="card-copy"><p class="card-hebrew" dir="rtl" lang="he">לוח אונליין</p><h3>Kaluach Online</h3><p>The complete Kaluach experience, available directly in your browser.</p><p class="description-he" dir="rtl" lang="he">חוויית קלוח המלאה, זמינה ישירות בדפדפן.</p></div>
+            <span class="card-link">Open Kaluach · <span dir="rtl" lang="he">פתיחת קלוח</span><b>→</b></span>
+          </a>
+
+          <a class="resource-card" data-tone="gold" href="https://prutah.kaluach.com">
+            <div class="card-topline"><span class="icon-wrap">₪</span><span class="external-icon">↗</span></div>
+            <div class="card-copy"><p class="card-hebrew" dir="rtl" lang="he">שווה פרוטה</p><h3>Shaveh Prutah</h3><p>Current values and practical information for Shaveh Prutah.</p><p class="description-he" dir="rtl" lang="he">ערכים עדכניים ומידע שימושי לשווה פרוטה.</p></div>
+            <span class="card-link">View values · <span dir="rtl" lang="he">לצפייה בערכים</span><b>→</b></span>
+          </a>
+
+          <a class="resource-card" data-tone="green" href="https://machatzit-hashekel.kaluach.com">
+            <div class="card-topline"><span class="icon-wrap">◫</span><span class="external-icon">↗</span></div>
+            <div class="card-copy"><p class="card-hebrew" dir="rtl" lang="he">מחצית השקל</p><h3>Machatzit Hashekel</h3><p>Helpful calculations and guidance for Machatzit Hashekel.</p><p class="description-he" dir="rtl" lang="he">חישובים ומידע שימושי למחצית השקל.</p></div>
+            <span class="card-link">Open calculator · <span dir="rtl" lang="he">פתיחת המחשבון</span><b>→</b></span>
+          </a>
+
+          <article class="resource-card download-card" data-tone="slate">
+            <div class="card-topline"><a class="icon-wrap download-action" href="https://download.kaluach.com/Kaluach-3.2.46.30.zip" aria-label="Download Kaluach 3 for Windows">↓</a></div>
+            <div class="card-copy"><p class="card-hebrew" dir="rtl" lang="he">קלוח ל־Windows</p><h3>Kaluach for Windows</h3><p>Download the legacy Kaluach 3 desktop application for Windows.</p><p class="description-he" dir="rtl" lang="he">הורדת גרסת קלוח 3 הוותיקה למחשב Windows.</p></div>
+            <a class="card-link" href="https://download.kaluach.com/Kaluach-3.2.46.30.zip">Download app · <span dir="rtl" lang="he">הורדת התוכנה</span><b>↓</b></a>
+          </article>
+
+          <a class="resource-card" data-tone="violet" href="https://kaluach3help.kaluach.com">
+            <div class="card-topline"><span class="icon-wrap">?</span><span class="external-icon">↗</span></div>
+            <div class="card-copy"><p class="card-hebrew" dir="rtl" lang="he">עזרה לקלוח 3</p><h3>Kaluach 3 Help</h3><p>Documentation and help for the legacy Kaluach 3 Windows application.</p><p class="description-he" dir="rtl" lang="he">מדריכים ועזרה לתוכנת קלוח 3 ל־Windows.</p></div>
+            <span class="card-link">Visit help center · <span dir="rtl" lang="he">למרכז העזרה</span><b>→</b></span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-brand"><span class="brand-mark small" aria-hidden="true">ק</span><span>Kaluach</span></div>
+      <p dir="rtl" lang="he">לוח עברי, זמני היום וכלים שימושיים</p>
+      <p>Jewish calendar, daily times, and useful tools.</p>
+    </footer>
+  </body>
+</html>
