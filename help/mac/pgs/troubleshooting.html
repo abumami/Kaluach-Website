@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Troubleshooting</title>
+  
+  <meta name="robots" content="index,anchors" />
+  <meta name="keywords" content="location permission, place search, development build" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="../sty/help.css" type="text/css" media="all" />
+</head>
+<body><main><nav class="booknav" aria-label="Help sections">
+<a href="../index.html">Home</a>
+<a href="getting-started.html">Using Kaluach</a>
+<a href="available-methods.html">Zmanim Methods</a>
+<a href="calendar-observances.html">Calendar</a>
+<a href="glossary.html">Halachic Times</a>
+</nav><nav class="breadcrumbs"><a href="../index.html">Kaluach Mac Help</a></nav><a name="troubleshooting"></a><header><h1>Troubleshooting</h1></header>
+<p class="lead">These notes describe the current development build and will be revised as the app settles.</p>
+<h2>Use My Location does not respond</h2><p>Check System Settings → Privacy &amp; Security → Location Services and confirm that location access is enabled for Kaluach.</p>
+<h2>Place suggestions do not appear</h2><p>Suggestions require an internet connection. With a working connection, press Return to try a direct search.</p>
+<h2>A location is classified incorrectly</h2><p>Israel-or-diaspora classification can depend on how the place is identified by map data. Use the Country control in Location Settings to override it for that saved place, and record the exact place name so its automatic handling can be reviewed. This does not alter the separately resolved time zone.</p>
+<h2>Alarms or reminders don’t appear</h2>
+<p>Check System Settings → Notifications → Kaluach, and any Focus that may be silencing it. Nothing is sent on Shabbat or Yom Tov, and alarms are scheduled only up to two weeks ahead, refreshed each time Kaluach is opened. A development build of the app that isn’t signed with a developer account may not be allowed to send notifications at all.</p>
+<h2>A displayed time is consistently one hour wrong</h2><p>Confirm the location and time zone first. If its daylight-saving rule is still incorrect, change that location’s Daylight Saving setting from Automatic to the required override.</p>
+<h2>An old development name briefly appears</h2><p>If macOS briefly shows “Pinefrost” after installing a development build, restart the Mac to clear the old system cache.</p>
+<h2>The app or Help Book has changed</h2><p>This is prerelease software. A control, label, or behavior described here may temporarily lag behind the newest app build.</p>
+
+<footer>Kaluach Mac Help · English source edition</footer></main></body></html>

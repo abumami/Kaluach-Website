@@ -1,0 +1,30 @@
+
+:root { color-scheme: light dark; --accent:#2f75b5; --navy:#17324d; --line:#d9e1e8; --muted:#58626d; --panel:#eef5fa; }
+* { box-sizing:border-box; }
+html { font: 16px -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif; line-height:1.55; }
+body { margin:0; color:CanvasText; background:Canvas; }
+main { max-width:760px; margin:0 auto; padding:36px 34px 60px; }
+header { border-bottom:1px solid var(--line); margin-bottom:28px; }
+h1 { font-size:2rem; line-height:1.15; margin:0 0 12px; color:CanvasText; }
+h2 { font-size:1.35rem; margin:1.6em 0 .45em; }
+h3 { font-size:1.05rem; margin:1.35em 0 .35em; }
+p, li { max-width:72ch; }
+a { color:var(--accent); }
+.booknav { display:flex; flex-wrap:wrap; gap:8px 16px; padding:11px 0; margin-bottom:20px; border-bottom:1px solid var(--line); font-size:.88rem; }
+.booknav a { text-decoration:none; }
+nav.breadcrumbs { font-size:.85rem; margin-bottom:16px; }
+.lead { font-size:1.08rem; color:var(--muted); }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin:22px 0; }
+.card { display:block; border:1px solid var(--line); border-radius:10px; padding:16px; text-decoration:none; color:inherit; background:var(--panel); }
+.card strong { display:block; color:var(--accent); margin-bottom:4px; }
+table { width:100%; border-collapse:collapse; margin:18px 0; font-size:.94rem; }
+th { background:var(--navy); color:white; text-align:start; }
+th, td { border:1px solid var(--line); padding:9px 10px; vertical-align:top; }
+.tm { font-size:.5em; vertical-align:super; font-weight:normal; }
+.lang { color:var(--muted); font-size:.85em; font-weight:normal; }
+blockquote { margin:1em 0; padding:6px 14px; border-inline-start:3px solid var(--line); }
+.note { border-inline-start:4px solid var(--accent); padding:8px 14px; background:var(--panel); }
+footer { margin-top:42px; padding-top:14px; border-top:1px solid var(--line); color:var(--muted); font-size:.82rem; }
+@media (max-width:560px) { main { padding:24px 18px 42px; } h1 { font-size:1.65rem; } }
+@media (prefers-color-scheme:dark) { :root { --line:#46525e; --muted:#b2bac2; --panel:#172431; --accent:#70b7f2; } }
+@media (max-width:560px) { table { display:block; overflow-x:auto; } }
