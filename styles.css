@@ -14,6 +14,12 @@ a { color: inherit; text-decoration: none; }
 .site-header { max-width: 1240px; height: 84px; margin: 0 auto; padding: 0 32px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
 .brand, .footer-brand { display: flex; align-items: center; gap: 11px; font-family: Georgia, 'Times New Roman', serif; font-size: 22px; font-weight: 700; letter-spacing: -0.02em; }
 .brand-mark { width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid rgba(38, 93, 133, 0.22); border-radius: 50%; background: #fffdfa; color: var(--blue); font-size: 21px; box-shadow: 0 3px 14px rgba(19, 34, 56, 0.06); }
+.site-nav { display: flex; align-items: center; gap: 22px; font-size: 14px; font-weight: 700; }
+.site-nav a { color: var(--ink); padding: 6px 0; border-bottom: 2px solid transparent; transition: 180ms ease; }
+.site-nav a:hover { color: var(--blue); border-bottom-color: var(--warm); }
+.nav-he { display: flex; gap: 18px; font-size: 15px; }
+.tm { font-size: 0.32em; vertical-align: super; margin-left: 0.04em; letter-spacing: 0; font-weight: 400; }
+h3 .tm { font-size: 0.5em; }
 .header-note { display: flex; align-items: center; gap: 12px; color: var(--muted); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
 .header-note [dir='rtl'] { letter-spacing: 0; font-size: 13px; }
 .divider { width: 1px; height: 18px; background: var(--line); }
@@ -46,6 +52,23 @@ h1 .tagline { color: var(--blue); font-style: italic; }
 .star { position: absolute; color: var(--warm); font-size: 19px; }
 .star-one { left: 15%; top: 15%; }
 .star-two { right: 14%; bottom: 18%; font-size: 13px; }
+.apps { max-width: 1240px; margin: 0 auto; padding: 8px 32px 88px; }
+.app-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 18px; }
+.app-card { padding: 30px; display: flex; flex-direction: column; gap: 14px; border: 1px solid var(--line); border-radius: 10px; background: white; box-shadow: 0 14px 40px rgba(19, 34, 56, 0.06); }
+.app-card.app-mac { border-color: rgba(38, 93, 133, 0.35); box-shadow: 0 22px 56px rgba(19, 34, 56, 0.12); }
+.app-head { display: flex; align-items: center; gap: 20px; margin-bottom: 4px; }
+.app-icon { width: 96px; height: 96px; flex: none; filter: drop-shadow(0 8px 16px rgba(19, 34, 56, 0.22)); }
+.app-head h3 { margin-bottom: 8px; font-size: 32px; }
+.app-head .card-hebrew { margin-bottom: 2px; }
+.status-badge { display: inline-block; padding: 5px 11px; border-radius: 999px; background: #fbefda; color: #875a13; font-size: 12px; font-weight: 700; }
+.status-badge.muted { background: #edf0f3; color: #536071; }
+.app-card > p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.6; }
+.app-card > p.description-he { text-align: right; }
+.app-links { margin-top: auto; padding-top: 16px; display: flex; flex-wrap: wrap; gap: 8px; border-top: 1px solid var(--line); }
+.app-links a { padding: 8px 14px; border: 1px solid rgba(38, 93, 133, 0.25); border-radius: 999px; color: var(--blue); font-size: 13px; font-weight: 700; transition: 180ms ease; }
+.app-links a:hover { background: var(--blue); border-color: var(--blue); color: white; }
+.footer-links { grid-column: 1 / -1; text-align: center !important; }
+.footer-links a { color: var(--blue); font-weight: 700; }
 .resources { padding: 88px max(32px, calc((100vw - 1176px) / 2)); background: #fffdfa; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .section-heading { margin-bottom: 36px; display: flex; align-items: end; justify-content: space-between; }
 .section-kicker { margin-bottom: 10px; }
@@ -91,6 +114,8 @@ footer p:last-child { text-align: right; }
   .hero-copy { max-width: 620px; }
   .resource-grid { grid-template-columns: repeat(2, 1fr); }
   .resource-card.featured { grid-column: span 2; }
+  .app-grid { grid-template-columns: 1fr; }
+  .nav-he, .site-nav .divider { display: none; }
   footer { grid-template-columns: 1fr; text-align: center; }
   .footer-brand { justify-content: center; }
   footer p:last-child { text-align: center; }
@@ -99,6 +124,12 @@ footer p:last-child { text-align: right; }
 @media (max-width: 580px) {
   .site-header { height: 72px; padding: 0 20px; }
   .header-note { display: none; }
+  .site-nav { gap: 14px; font-size: 13px; }
+  .apps { padding: 0 20px 64px; }
+  .app-card { padding: 22px; }
+  .app-head { gap: 14px; }
+  .app-icon { width: 72px; height: 72px; }
+  .app-head h3 { font-size: 26px; }
   .hero { min-height: 560px; padding: 36px 20px 58px; }
   .calendar-art { width: 340px; right: -190px; top: 65px; opacity: 0.28; }
   h1 { font-size: 47px; }

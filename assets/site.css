@@ -35,3 +35,4 @@ form.contact textarea { min-height:140px; resize:vertical; }
 form.contact button { justify-self:start; font:inherit; font-weight:600; padding:9px 18px; border:0; border-radius:8px; background:var(--accent); color:white; cursor:pointer; }
 .hidden-field { position:absolute; left:-10000px; width:1px; height:1px; overflow:hidden; }
 .langswitch { float:inline-end; font-size:.88rem; }
+.booknav .langswitch { margin-inline-start:auto; }
