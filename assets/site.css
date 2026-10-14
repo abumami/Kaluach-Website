@@ -36,3 +36,15 @@ form.contact button { justify-self:start; font:inherit; font-weight:600; padding
 .hidden-field { position:absolute; left:-10000px; width:1px; height:1px; overflow:hidden; }
 .langswitch { float:inline-end; font-size:.88rem; }
 .booknav .langswitch { margin-inline-start:auto; }
+/* App sections (/mac, /iKaluach, /win, /android) */
+.booknav .apptabs { display:flex; gap:14px; }
+.booknav .apptabs a { color:var(--accent); }
+.booknav .apptabs a.current { color:CanvasText; font-weight:600; }
+header.apphead { display:flex; align-items:center; gap:18px; padding-bottom:14px; }
+header.apphead img { width:84px; height:84px; flex:none; border-radius:18px; }
+header.apphead h1 { margin:0 0 6px; }
+.appmark { width:84px; height:84px; flex:none; display:grid; place-items:center; border-radius:18px; background:var(--panel); border:1px solid var(--line); color:var(--accent); font-size:40px; }
+.status { margin:0; color:var(--muted); font-size:.95rem; }
+ul.features li { margin:.35em 0; }
+.chooser { margin-top:8px; }
+@media (max-width:560px) { header.apphead img, .appmark { width:64px; height:64px; } .booknav .apptabs { gap:10px; } }

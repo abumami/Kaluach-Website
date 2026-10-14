@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Page not found · Kaluach</title>
+  <link rel="icon" href="/favicon.svg" />
+  <link rel="stylesheet" href="/assets/site.css" />
+  <script>
+    (function () {
+      var p = location.pathname, m = p.match(/^\/(ikaluach|mac|win|android)(\/.*)?$/i);
+      var canonical = { ikaluach: "iKaluach", mac: "mac", win: "win", android: "android" };
+      if (m) {
+        var target = "/" + canonical[m[1].toLowerCase()] + (m[2] || "/");
+        if (target !== p) location.replace(target + location.search + location.hash);
+      }
+    })();
+  </script>
+</head>
+<body><main>
+<nav class="booknav"><a class="homelink" href="/index.html">← Kaluach home</a></nav>
+<header><h1>Page not found</h1></header>
+<p class="lead">This page doesn’t exist (any more). The Kaluach apps: <a href="/mac/">Kaluach Mac</a> · <a href="/iKaluach/">iKaluach</a> · <a href="/win/">Kaluach Win</a> · <a href="/android/">Kaluach for Android</a>.</p>
+<p dir="rtl" lang="he">הדף לא נמצא. <a href="/index.html">לדף הבית של קלוח</a></p>
+<footer>Kaluach™ · iKaluach™ · © Abu Mami</footer>
+</main></body></html>
