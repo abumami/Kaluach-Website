@@ -48,3 +48,7 @@ header.apphead h1 { margin:0 0 6px; }
 ul.features li { margin:.35em 0; }
 .chooser { margin-top:8px; }
 @media (max-width:560px) { header.apphead img, .appmark { width:64px; height:64px; } .booknav .apptabs { gap:10px; } }
+
+/* Store badges (Microsoft Store, later the App Store): not the app-icon size. */
+header.apphead .store-badge img { width:200px; height:auto; border-radius:0; flex:none; }
+.store-badge { display:inline-block; line-height:0; }

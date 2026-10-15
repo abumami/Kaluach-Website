@@ -149,3 +149,7 @@ footer p:last-child { text-align: right; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: 0.01ms !important; }
 }
+
+/* Store badges on the app cards. */
+.store-badge { display: inline-block; line-height: 0; }
+.store-badge img { height: auto; }
