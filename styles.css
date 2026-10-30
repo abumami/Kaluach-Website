@@ -112,6 +112,9 @@ footer { max-width: 1240px; margin: 0 auto; padding: 40px 32px 48px; display: gr
 footer p { margin: 0; }
 footer p:last-child { text-align: right; }
 .brand-mark.small { width: 30px; height: 30px; font-size: 16px; }
+.brand-mark.k3 { border: none; background: none; box-shadow: none; }
+.brand-mark.small.k3 { width: 32px; height: 32px; }
+.brand-mark.k3 img { width: 32px; height: 32px; display: block; image-rendering: pixelated; }
 .footer-brand { color: var(--ink); font-size: 18px; }
 
 @media (max-width: 850px) {
