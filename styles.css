@@ -90,6 +90,7 @@ h2 { margin-bottom: 0; font-family: Georgia, serif; font-size: clamp(35px, 5vw, 
 [data-tone='violet'] .icon-wrap { color: #685486; background: #f0eaf7; }
 .icon-wrap.coin, [data-tone] .icon-wrap.coin { background: none; }
 .icon-wrap.coin img { width: 44px; height: 44px; display: block; }
+.icon-wrap.k3 img { width: 32px; height: 32px; display: block; image-rendering: pixelated; }
 .featured .icon-wrap { color: white; background: rgba(255, 255, 255, 0.14); }
 .external-icon { color: #9ba3ae; font-size: 20px; transition: 180ms ease; }
 .featured .external-icon { color: rgba(255, 255, 255, 0.6); }
