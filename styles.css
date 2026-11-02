@@ -70,7 +70,11 @@ h1 .tagline { color: var(--blue); font-style: italic; }
 .app-links a:hover { background: var(--blue); border-color: var(--blue); color: white; }
 .footer-links { grid-column: 1 / -1; text-align: center !important; }
 .footer-links a { color: var(--blue); font-weight: 700; }
-.tip-jar { grid-column: 1 / -1; text-align: center; }
+.tip-jar { grid-column: 1 / -1; display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+.tip-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; border-radius: 9999px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 15px; font-weight: 600; line-height: 1.2; text-decoration: none; box-shadow: 0 4px 14px rgba(19, 34, 56, 0.12); transition: transform 0.15s ease, box-shadow 0.15s ease; }
+.tip-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(19, 34, 56, 0.18); }
+.tip-btn.kofi { color: #fff; background: var(--blue); border: 1.5px solid var(--blue); }
+.tip-btn.crypto { color: var(--ink); background: #fff; border: 1.5px solid #e5e7eb; }
 .resources { padding: 88px max(32px, calc((100vw - 1176px) / 2)); background: #fffdfa; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .section-heading { margin-bottom: 36px; display: flex; align-items: end; justify-content: space-between; }
 .section-kicker { margin-bottom: 10px; }
