@@ -5,6 +5,10 @@ ACCESS_KEY = "b6964e45-f32f-49a7-a12c-6f3900c1c99e"   # the site's existing Web3
 
 APPS = {}
 
+# Kaluach for Windows: zmanim alarms (and the matching privacy wording) are shown only once
+# the update that has them (4.0.52 or later) is live in the Microsoft Store. Set to True then.
+WIN_ALARMS_LIVE = True     # 4.0.52 live in the Microsoft Store, 3 Nov 2026
+
 # ---------------------------------------------------------------- Kaluach for the Mac
 APPS["mac"] = dict(
     icon="kaluach-mac-icon.png",
@@ -137,7 +141,7 @@ APPS["win"] = dict(
             "Zmanim for any location, by the built-in shitot (GRA, Magen Avraham, Chabad, Harav Ovadiah Yosef, Harav Mordechai Eliyahu, Kisei Rachamim, Maaseh Nissim) or your own, with Rabbeinu Tam if you wish.",
             "City search built in — about 170,000 places with their time zones, no internet connection needed.",
             "Personal events — azkarot, birthdays, anniversaries, one-time dates — with reminders as Windows notifications, never on Shabbat or Yom Tov.",
-            "Zmanim alarms before (or after) the zmanim you choose, never on Shabbat or Yom Tov.",
+            *(["Zmanim alarms before (or after) the zmanim you choose, never on Shabbat or Yom Tov."] if WIN_ALARMS_LIVE else []),
             "Print a year of Shabbatot and holidays with their times, or export every day to a CSV spreadsheet.",
             "English and Hebrew, light and dark mode. Move your events to and from Kaluach on the Mac, iPhone and Android with the Kaluach events file, choosing which events to export or import.",
         ],
@@ -149,7 +153,8 @@ APPS["win"] = dict(
             ("lead", "Kaluach™ for Windows collects no personal data. There are no accounts, no ads, no analytics and no tracking, and the app sends nothing over the internet. (A link you click, such as to this website, opens in your browser.)"),
             ("Where your data is kept", "Your events, saved locations, custom zmanim shitot and settings are stored on your PC, in your Windows user folder. They are not synced anywhere, and the developer never receives them. A file you export (events, or a year’s CSV) goes only where you save it."),
             ("Location", "Kaluach for Windows doesn’t use your PC’s location. You choose a place by searching its built-in list of cities or by typing coordinates; the search happens on your PC and nothing is sent anywhere."),
-            ("Alarms and reminders", "Zmanim alarms and event reminders are scheduled with Windows on your PC and shown as Windows notifications. Nothing is sent to a server."),
+            ("Alarms and reminders", "Zmanim alarms and event reminders are scheduled with Windows on your PC and shown as Windows notifications. Nothing is sent to a server.") if WIN_ALARMS_LIVE else
+            ("Reminders", "Event reminders are scheduled with Windows on your PC and shown as Windows notifications. Nothing is sent to a server."),
             ("Installing and updates", "If you install Kaluach for Windows from the Microsoft Store, Microsoft handles the download, licence and updates under the <a href=\"https://privacy.microsoft.com/privacystatement\">Microsoft Privacy Statement</a>; the developer receives only the anonymous totals the Store reports to every developer (such as the number of installs), and, if you let Windows send diagnostic data, Microsoft’s reports of the app’s crashes."),
             ("Error log", "If the app stops unexpectedly, a short error log is written on your PC so that a problem can be diagnosed. It is never sent anywhere; you can choose to include it in a support message."),
         ],
@@ -164,7 +169,7 @@ APPS["win"] = dict(
             "זמני היום לכל מיקום, לפי השיטות המובנות (גר״א, מגן אברהם, חב״ד, הרב עובדיה יוסף, הרב מרדכי אליהו, כסא רחמים, מעשה ניסים) או לפי שיטה משלך, ואם רוצים — גם רבינו תם.",
             "חיפוש ערים מובנה — כ־170,000 מקומות עם אזורי הזמן שלהם, בלי צורך בחיבור לאינטרנט.",
             "אירועים אישיים — אזכרות, ימי הולדת, ימי נישואין ותאריכים חד־פעמיים — עם תזכורות כהתראות של Windows, לעולם לא בשבת וביום טוב.",
-            "התראות זמנים לפני הזמנים שבוחרים (או אחריהם), לעולם לא בשבת וביום טוב.",
+            *(["התראות זמנים לפני הזמנים שבוחרים (או אחריהם), לעולם לא בשבת וביום טוב."] if WIN_ALARMS_LIVE else []),
             "הדפסת שנה של שבתות וחגים עם זמניהם, או ייצוא של כל ימי השנה לגיליון CSV.",
             "עברית ואנגלית, מצב בהיר ומצב כהה. העברת אירועים אל קלוח במק, באייפון ובאנדרואיד וממנו, בקובץ האירועים של קלוח, עם בחירה אילו אירועים לייצא או לייבא.",
         ],
@@ -176,7 +181,8 @@ APPS["win"] = dict(
             ("lead", "קלוח™ ל־Windows אינו אוסף מידע אישי. אין חשבונות משתמש, אין פרסומות, אין ניתוח שימוש ואין מעקב, והאפליקציה אינה שולחת דבר באינטרנט. (קישור שלוחצים עליו, למשל לאתר זה, נפתח בדפדפן.)"),
             ("היכן נשמר המידע שלך", "האירועים, המיקומים השמורים, שיטות הזמנים המותאמות וההגדרות נשמרים במחשב שלך, בתיקיית המשתמש שלך ב־Windows. הם אינם מסונכרנים לשום מקום, והמפתח אינו מקבל אותם לעולם. קובץ שמייצאים (אירועים, או גיליון CSV של שנה) נשמר רק במקום שבוחרים."),
             ("מיקום", "קלוח ל־Windows אינו משתמש במיקום של המחשב. בוחרים מקום בחיפוש ברשימת הערים המובנית או בהקלדת קואורדינטות; החיפוש נעשה במחשב שלך ושום דבר אינו נשלח."),
-            ("התראות ותזכורות", "התראות הזמנים והתזכורות לאירועים מתוזמנות ב־Windows במחשב שלך ומוצגות כהתראות של Windows. דבר אינו נשלח לשרת."),
+            ("התראות ותזכורות", "התראות הזמנים והתזכורות לאירועים מתוזמנות ב־Windows במחשב שלך ומוצגות כהתראות של Windows. דבר אינו נשלח לשרת.") if WIN_ALARMS_LIVE else
+            ("תזכורות", "התזכורות לאירועים מתוזמנות ב־Windows במחשב שלך ומוצגות כהתראות של Windows. דבר אינו נשלח לשרת."),
             ("התקנה ועדכונים", "בהתקנה של קלוח ל־Windows מ־Microsoft Store, Microsoft מטפלת בהורדה, ברישיון ובעדכונים לפי <a href=\"https://privacy.microsoft.com/privacystatement\">הצהרת הפרטיות של Microsoft</a>; המפתח מקבל רק את הנתונים הכוללים והאנונימיים שהחנות מדווחת לכל מפתח (כמו מספר ההתקנות), ואם מאפשרים ל־Windows לשלוח נתוני אבחון — את הדיווחים של Microsoft על קריסות של האפליקציה."),
             ("יומן שגיאות", "אם האפליקציה נסגרת באופן בלתי צפוי, נכתב במחשב שלך יומן שגיאות קצר כדי שאפשר יהיה לאבחן את הבעיה. הוא לעולם אינו נשלח; אפשר לבחור לצרף אותו לפנייה לתמיכה."),
         ],
@@ -185,10 +191,12 @@ APPS["win"] = dict(
 
 # ---------------------------------------------------------------- Android
 APPS["android"] = dict(
-    icon=None,
+    icon="kaluach-android-icon.png",
     en=dict(
         name="Kaluach for Android", plain="Kaluach for Android", topic="Kaluach for Android",
         status="In development · coming later to Google Play",
+        # The about page links its status line to the tester section below.
+        status_about="In development · <a href=\"#testers\">testers wanted</a> for Google Play",
         lead="The same calendars, zmanim and personal events as Kaluach for the Mac and iKaluach, on Android phones.",
         features=[
             "Civil Month and Hebrew Month views, Today and Go to Year.",
@@ -200,6 +208,8 @@ APPS["android"] = dict(
             "English and Hebrew. Move your events to and from Kaluach on the Mac, iPhone and Windows with the Kaluach events file.",
         ],
         requirements="Android 8.0 or later.",
+        # The closed test on Google Play (12 testers for 14 days), after Requirements.
+        testers='<h2 id="testers">Become a tester</h2>\n<p>Kaluach for Android is almost ready for Google Play. Before a new app can be published, Google requires a closed test: at least 12 people using it for 14 days in a row. You can help — and have Kaluach on your phone before anyone else.</p>\n<h3>What you need</h3>\n<ul>\n<li>An Android phone or tablet with Android 8.0 or later.</li>\n<li>A Google account — the one you use for Google Play on that phone.</li>\n</ul>\n<h3>What we ask</h3>\n<ul>\n<li>Keep Kaluach installed for at least two weeks.</li>\n<li>Open it now and then: check the zmanim, look up a date, add a yahrzeit or a birthday.</li>\n<li>Tell us what you find — anything wrong, confusing or missing.</li>\n</ul>\n<h3>How to join</h3>\n<ol>\n<li>Join the testers group: <a href="https://groups.google.com/g/kaluach-android-testers">Kaluach Android testers</a>. Sign in with the same Google account as on your phone.</li>\n<li>Open the <a href="https://play.google.com/apps/testing/com.abumami.kaluach">testing link</a>, on your phone or computer, and tap <strong>Become a tester</strong>. Use the same Google account.</li>\n<li>Install Kaluach from Google Play on your phone: <a href="https://play.google.com/store/apps/details?id=com.abumami.kaluach">Kaluach on Google Play</a>. This link works once you’ve done step 2; it may take a few minutes.</li>\n</ol>\n<p>Your email address is used only to give you access to the test, and members of the group can’t see each other. To stop testing, leave the group and uninstall Kaluach.</p>\n<p>Found something? Write to us through <a href="support/index.html">Support</a>.</p>\n\n',
         help=[],
         helpnote="Help is built into the app.",
         privacy=[
@@ -213,6 +223,8 @@ APPS["android"] = dict(
     he=dict(
         name="קלוח לאנדרואיד", plain="קלוח לאנדרואיד", topic="קלוח לאנדרואיד",
         status="בפיתוח · בהמשך ב־Google Play",
+        # The about page links its status line to the tester section below.
+        status_about="בפיתוח · <a href=\"#testers\">דרושים בודקים</a> ל־Google Play",
         lead="אותו לוח, אותם זמני היום ואותם אירועים אישיים כמו בקלוח למק ובאיי־קלוח — בטלפונים עם אנדרואיד.",
         features=[
             "תצוגת חודש אזרחי וחודש עברי, היום ומעבר לשנה.",
@@ -224,6 +236,7 @@ APPS["android"] = dict(
             "עברית ואנגלית. העברת אירועים אל קלוח במק, באייפון וב־Windows וממנו, בקובץ האירועים של קלוח.",
         ],
         requirements="אנדרואיד 8.0 ומעלה.",
+        testers='<h2 id="testers">הצטרפו לבודקים</h2>\n<p>קלוח לאנדרואיד כמעט מוכן ל־Google Play. לפני שאפליקציה חדשה מתפרסמת, Google דורשת בדיקה סגורה: לפחות 12 אנשים שמשתמשים בה 14 ימים ברציפות. אפשר לעזור — ולקבל את קלוח בטלפון לפני כולם.</p>\n<h3>מה צריך</h3>\n<ul>\n<li>טלפון או טאבלט עם אנדרואיד 8.0 ומעלה.</li>\n<li>חשבון Google — זה שמשמש ל־Google Play באותו טלפון.</li>\n</ul>\n<h3>מה מבקשים</h3>\n<ul>\n<li>להשאיר את קלוח מותקן לפחות שבועיים.</li>\n<li>לפתוח אותו מדי פעם: לבדוק זמנים, לחפש תאריך, להוסיף אזכרה או יום הולדת.</li>\n<li>לספר לנו מה מצאתם — כל דבר שגוי, מבלבל או חסר.</li>\n</ul>\n<h3>איך מצטרפים</h3>\n<ol>\n<li>מצטרפים לקבוצת הבודקים: <a href="https://groups.google.com/g/kaluach-android-testers">בודקי קלוח לאנדרואיד</a>. יש להתחבר עם אותו חשבון Google שבטלפון.</li>\n<li>פותחים את <a href="https://play.google.com/apps/testing/com.abumami.kaluach">קישור הבדיקה</a>, בטלפון או במחשב, ומאשרים את ההצטרפות לבדיקה. יש להשתמש באותו חשבון Google.</li>\n<li>מתקינים את קלוח מ־Google Play בטלפון: <a href="https://play.google.com/store/apps/details?id=com.abumami.kaluach">קלוח ב־Google Play</a>. הקישור עובד אחרי שלב 2; לפעמים זה לוקח כמה דקות.</li>\n</ol>\n<p>כתובת הדוא״ל שלכם משמשת רק כדי לתת לכם גישה לבדיקה, וחברי הקבוצה אינם רואים זה את זה. כדי להפסיק לבדוק, עוזבים את הקבוצה ומסירים את קלוח.</p>\n<p>מצאתם משהו? כתבו לנו דרך <a href="../support/he/index.html">התמיכה</a>.</p>\n\n',
         help=[],
         helpnote="העזרה כלולה באפליקציה.",
         privacy=[

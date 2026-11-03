@@ -48,10 +48,12 @@ def page(rel, lang, title, body, app, kind):
         sub = {"about": "", "privacy": "privacy/", "support": "support/"}[k]
         return f"{base}{sub}{'he/' if he else ''}index.html"
     other = f"{base}{ {'about': '', 'privacy': 'privacy/', 'support': 'support/'}[kind] }{'' if he else 'he/'}index.html"
+    current = ' aria-current="page" class="current"'      # (kept out of the f-strings, for Python before 3.12)
     tabs = " ".join(
-        f'<a href="{link(k)}"{" aria-current=\"page\" class=\"current\"" if k == kind else ""}>{t[k]}</a>'
+        f'<a href="{link(k)}"{current if k == kind else ""}>{t[k]}</a>'
         for k in ("about", "privacy", "support"))
-    home = f'<a class="homelink"{" dir=\"rtl\"" if he else ""} href="{root}index.html">{t["home"]}</a>'
+    rtl = ' dir="rtl"' if he else ""
+    home = f'<a class="homelink"{rtl} href="{root}index.html">{t["home"]}</a>'
     return f"""<!DOCTYPE html>
 <html lang="{lang}" dir="{'rtl' if he else 'ltr'}">
 <head>
@@ -86,14 +88,16 @@ def app_header(app, d, root, h1, badge=False):
         else:
             status = store["he" if d is APPS[app]["he"] else "en"]
         return f'<header class="apphead">{mark}<div><h1>{h1}</h1><p class="status">{status}</p></div></header>'
-    return f'<header class="apphead">{mark}<div><h1>{h1}</h1><p class="status">{d["status"]}</p></div></header>'
+    status = d.get("status_about", d["status"]) if badge else d["status"]   # status_about: the about page only
+    return f'<header class="apphead">{mark}<div><h1>{h1}</h1><p class="status">{status}</p></div></header>'
 
 
 def help_cards(d, root):
     if not d["help"]:
         return f'<p>{d["helpnote"]}</p>'
+    he_attrs, en_attrs = ' dir="rtl" lang="he"', ' dir="ltr" lang="en"'
     cards = "\n".join(
-        f'<a class="card" href="{root}{href.lstrip("./")}"{' dir="rtl" lang="he"' if lang == "עברית" else ' dir="ltr" lang="en"'}><strong>{name}</strong>{lang}</a>'
+        f'<a class="card" href="{root}{href.lstrip("./")}"{he_attrs if lang == "עברית" else en_attrs}><strong>{name}</strong>{lang}</a>'
         for href, name, lang in d["help"])
     return f'<div class="grid">\n{cards}\n</div>\n<p>{d["helpnote"]}</p>'
 
@@ -117,7 +121,7 @@ def build_app(app):
 </ul>
 <h2>{t['req']}</h2>
 <p>{d['requirements']}</p>
-<h2>{t['help']}</h2>
+{d.get('testers', '')}<h2>{t['help']}</h2>
 {help_cards(d, root)}
 {extra}
 <h2>{t['more']}</h2>
