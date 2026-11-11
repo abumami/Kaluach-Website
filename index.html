@@ -9,6 +9,9 @@
     <meta property="og:description" content="Jewish calendar tools, calculators, downloads, and help." />
     <meta property="og:image" content="og.png" />
     <link rel="icon" href="favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&amp;display=swap" />
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
   </head>
@@ -34,7 +37,7 @@
     <main>
       <section class="hero" id="top">
         <div class="hero-copy">
-          <p class="eyebrow">▦ &nbsp; Calendar · Times · Tradition</p>
+          <p class="eyebrow">▦ <span>Since 1995</span> <bdi class="sep">::</bdi> <bdi dir="rtl" lang="he">מאז 5756</bdi> ▦</p>
           <h1>
             <span class="title-line">Kaluach<sup class="tm">™</sup> <bdi>::</bdi> <bdi dir="rtl" lang="he">קלוח</bdi></span><br />
             <span class="tagline" dir="rtl" lang="he">חבל על הזמן</span>
@@ -43,31 +46,28 @@
             <p class="hebrew-title">ברוכים הבאים לקלוח</p>
             <p>כל הכלים, המידע והיישומים של קלוח — במקום אחד.</p>
           </div>
-          <a class="primary-cta" href="https://online.kaluach.com">
-            <span>Open Kaluach Online <small dir="rtl" lang="he">פתיחת קלוח אונליין</small></span>
-            <b aria-hidden="true">→</b>
-          </a>
+          <p class="hero-date" aria-live="polite">
+            <span class="hero-date-he" dir="rtl" lang="he" id="hebrew-date-he"></span>
+            <span class="hero-date-en" id="hebrew-date-en"></span>
+          </p>
         </div>
 
-        <div class="calendar-art">
-          <div class="orbit orbit-one" aria-hidden="true"></div>
-          <div class="orbit orbit-two" aria-hidden="true"></div>
-          <div class="sun-disc" dir="rtl" lang="he" aria-live="polite">
-            <span class="sun-small" id="hebrew-month">היום</span>
-            <span class="sun-number" id="hebrew-day">—</span>
-            <span class="sun-small" id="hebrew-weekday">התאריך העברי</span>
+        <!-- Dedication (11 Nov 2026) -->
+        <aside class="dedication" aria-labelledby="dedication-title">
+          <div class="scroll">
+            <span class="scroll-roll top" aria-hidden="true"></span>
+            <h2 id="dedication-title"><bdi dir="rtl" lang="he">לעילוי נשמת</bdi> <span class="ded-sep" aria-hidden="true">::</span> <bdi>In loving memory</bdi></h2>
+            <p class="ded-ornament" aria-hidden="true">✦</p>
+            <ul class="ded-names" dir="rtl">
+              <li><span class="ded-he" dir="rtl" lang="he">משה מאיר בן שיינה מאירה וחיים</span><span class="ded-en">Morton M. Hersch</span></li>
+              <li><span class="ded-he" dir="rtl" lang="he">רחל בת עדיה ושלום</span><span class="ded-en">Gloria Goldsmith Hersch</span></li>
+              <li class="solo"><span class="ded-he" dir="rtl" lang="he">נחום מוטקה בן רחל ומשה מאיר</span><span class="ded-en">Bradley A. Hersch</span></li>
+              <li><span class="ded-he" dir="rtl" lang="he">פסח בן פייגה ואלטר</span><span class="ded-en">Paul Greenfield</span></li>
+              <li><span class="ded-he" dir="rtl" lang="he">דבורה בת קיילא גיטל ופנחס</span><span class="ded-en">Doris Greenfield</span></li>
+            </ul>
+            <span class="scroll-roll bottom" aria-hidden="true"></span>
           </div>
-          <div class="date-card date-one" dir="rtl" lang="he">
-            <span>השנה העברית · Hebrew year</span>
-            <strong id="hebrew-year">—</strong>
-          </div>
-          <div class="date-card date-two" lang="en">
-            <span>Hebrew date</span>
-            <strong id="english-hebrew-date">Today’s Hebrew date</strong>
-          </div>
-          <span class="star star-one" aria-hidden="true">✦</span>
-          <span class="star star-two" aria-hidden="true">✦</span>
-        </div>
+        </aside>
       </section>
 
       <section class="apps" id="apps" aria-labelledby="apps-title">
@@ -230,7 +230,7 @@
       <div class="footer-brand"><span class="brand-mark small k3" aria-hidden="true"><img src="assets/kaluach3-icon.png" width="32" height="32" alt="" /></span><span>Kaluach</span></div>
       <p dir="rtl" lang="he">לוח עברי, זמני היום וכלים שימושיים</p>
       <p>Jewish calendar, daily times, and useful tools.</p>
-      <!-- Tip buttons: Ko-fi (main) and BuyMePizza (crypto). Plain links, no third-party script. -->
+      <!-- Tip buttons: Buy Me a Coffee (its own script draws the button) and BuyMePizza (crypto). Ko-fi kept below, commented out. -->
       <div class="tip-jar">
         <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="Kaluach" data-color="#FFDD00" data-emoji="🍺"  data-font="Arial" data-text="Buy me a beer" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
        

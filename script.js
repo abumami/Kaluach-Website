@@ -1,6 +1,5 @@
 function hebrewNumber(value) {
-  const thousands = value >= 5000 ? 'ה׳' : '';
-  let number = value >= 5000 ? value % 1000 : value;
+  let number = value % 1000;           // years without the thousands (תשפ״ז, not ה׳תשפ״ז)
   const letters = [
     [400, 'ת'], [300, 'ש'], [200, 'ר'], [100, 'ק'], [90, 'צ'], [80, 'פ'],
     [70, 'ע'], [60, 'ס'], [50, 'נ'], [40, 'מ'], [30, 'ל'], [20, 'כ'],
@@ -18,24 +17,26 @@ function hebrewNumber(value) {
     number -= pair[0];
   }
 
-  const formatted = result.length === 1
-    ? `${result}׳`
-    : `${result.slice(0, -1)}״${result.slice(-1)}`;
-  return `${thousands}${formatted}`;
+  return result.length === 1 ? `${result}׳` : `${result.slice(0, -1)}״${result.slice(-1)}`;
 }
 
+// Today's Hebrew date under the hero heading, e.g.
+//   יום רביעי · כ׳ בחשוון תשפ״ז
+//   Wednesday · 20 Heshvan 5787
 function updateHebrewDate() {
   const now = new Date();
-  const locale = 'he-IL-u-ca-hebrew';
-  const format = (options) => new Intl.DateTimeFormat(locale, options).format(now);
+  const he = (options) => new Intl.DateTimeFormat('he-IL-u-ca-hebrew', options).format(now);
+  const en = new Intl.DateTimeFormat('en-US-u-ca-hebrew', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })
+    .formatToParts(now).reduce((parts, p) => { parts[p.type] = p.value; return parts; }, {});
 
-  document.querySelector('#hebrew-day').textContent = hebrewNumber(Number(format({ day: 'numeric' })));
-  document.querySelector('#hebrew-month').textContent = format({ month: 'long' });
-  document.querySelector('#hebrew-weekday').textContent = format({ weekday: 'long' });
-  document.querySelector('#hebrew-year').textContent = hebrewNumber(Number(format({ year: 'numeric' })));
-  document.querySelector('#english-hebrew-date').textContent = new Intl.DateTimeFormat('en-US-u-ca-hebrew', {
-    day: 'numeric', month: 'long', weekday: 'long', year: 'numeric',
-  }).format(now);
+  const heDate = document.querySelector('#hebrew-date-he');
+  const enDate = document.querySelector('#hebrew-date-en');
+  if (heDate) {
+    heDate.textContent = `${he({ weekday: 'long' })} · ${hebrewNumber(Number(he({ day: 'numeric' })))} ב${he({ month: 'long' })} ${hebrewNumber(Number(he({ year: 'numeric' })))}`;
+  }
+  if (enDate) {
+    enDate.textContent = `${en.weekday} · ${en.day} ${en.month} ${en.year}`;
+  }
 }
 
 updateHebrewDate();
